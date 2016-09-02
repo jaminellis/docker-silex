@@ -2,34 +2,32 @@
 
 This is a simple _Hello World_ project written in [Silex](http://silex.sensiolabs.org/), running on [Docker](http://www.docker.com/).
 
-## How to use it?
+## Prerequisites
 
-Basically, you need to have [Docker installed](http://docs.docker.com/installation/).
+You will need [Docker Compose](https://docs.docker.com/compose/install) which is included with Docker on Mac and Windows systems. Other systems please refer to the Docker Compose install docs.
 
-### Build an image
+## Usage
 
-Build an image based on `Dockerfile`:
 
-```
-docker build -t docker-silex .
-```
-
-### Run a container
-
-Run a container based on created image:
+### Start/stop the server
+Run the following command to start the server:
 
 ```
-docker run -d docker-silex
+docker-compose up -d --build
 ```
 
-### Check container's IP address
-```
-docker inspect --format='{{ .NetworkSettings.IPAddress }}' $(docker ps -l -q)
-```
+Note the `-d` flag which backgrounds the PHP dev server.
 
-### Test the app
-Curl or open in a web browser URL based on IP address followed by `/hello/World` eg.:
+To stop the server run:
 
 ```
-curl http://172.17.0.5/hello/World
+docker-compose down
+```
+
+### Logs
+
+To tail the logs while the server is running use the following command:
+
+```
+docker logs -f docker-silex 
 ```
