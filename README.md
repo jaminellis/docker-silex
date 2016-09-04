@@ -1,6 +1,6 @@
 # docker-silex
 
-This is a simple _Hello World_ project written in [Silex](http://silex.sensiolabs.org/), running on [Docker](http://www.docker.com/).
+This is a simple project written in [Silex](http://silex.sensiolabs.org/), running on [Docker](http://www.docker.com/). It features two classic getting started examples - Hello, World! and Fizzbuzz. See the [endpoint examples](#Endpoints) for more details.
 
 ## Prerequisites
 
