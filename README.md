@@ -31,3 +31,51 @@ To tail the logs while the server is running use the following command:
 ```
 docker logs -f docker-silex 
 ```
+
+## Endpoints
+
+### Hello, World
+
+Request:
+```
+GET /hello/$name
+```
+Params:
+
+`$name` - The value which will be interpolated to the string "Hello `$name`!"
+
+Example:
+```
+GET /hello/world
+```
+Returns:
+
+```
+{
+    message: "Hello world!"
+}
+```
+
+### Fizzbuzz
+
+Request:
+```
+GET /hello/$number
+```
+Params:
+
+`$number` - Must be an integer between 1 and 100. Non integers or values outside this range will return a 400 error.
+
+Example:
+```
+GET /fizzbuzz/15
+```
+Returns:
+
+```
+{
+    number: "15",
+    fizz: true,
+    buzz: true
+}
+```
